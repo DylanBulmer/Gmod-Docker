@@ -45,7 +45,7 @@ RUN steamcmd +login anonymous +force_install_dir ${HOME}/gmod +app_update 4020 v
 RUN steamcmd +login anonymous +force_install_dir ${HOME}/content/css +app_update 232330 validate +quit
 
 # Start server
-ENTRYPOINT [ "${HOME}/gmod/srcds_run" ]
+ENTRYPOINT [ ${HOME}/gmod/srcds_run ]
 EXPOSE 27015
 CMD [ \
   "-game garrysmod", \
