@@ -45,13 +45,5 @@ RUN steamcmd +login anonymous +force_install_dir ${HOME}/gmod +app_update 4020 v
 RUN steamcmd +login anonymous +force_install_dir ${HOME}/content/css +app_update 232330 validate +quit
 
 # Start server
-ENTRYPOINT [ ${HOME}/gmod/srcds_run ]
 EXPOSE 27015
-CMD [ \
-  "-game garrysmod", \
-  "+maxplayers ${MAX_PLAYERS:-12}", \
-  "+map ${MAP:-gm_construct}", \
-  "+gamemode ${GAMEMODE:-sandbox}", \
-  "+host_workshop_collection ${WORKSHOP_COLLECTION}", \
-  "-authkey ${AUTH_KEY}" \
-]
+CMD /home/steam/gmod/srcds_run -game garrysmod +maxplayers ${MAX_PLAYERS:-12} +map ${MAP:-gm_construct} +gamemode ${GAMEMODE:-sandbox} +host_workshop_collection ${WORKSHOP_COLLECTION} -authkey ${AUTH_KEY}
