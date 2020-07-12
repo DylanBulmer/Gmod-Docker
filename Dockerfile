@@ -32,17 +32,14 @@ ENV LANGUAGE 'en_US:en'
 # Create symlink for executable
 RUN ln -s /usr/games/steamcmd /usr/bin/steamcmd
 
-# Update SteamCMD and verify latest version
-# RUN steamcmd +quit
-
 # Update GMod and verify latest version
 RUN steamcmd +login anonymous +force_install_dir ${HOME}/gmod +app_update 4020 validate +quit
 
-# Using config files instead of copying file over.
-# COPY ./server.cfg ${HOME}/gmod/garrysmod/cfg/server.cfg
-
 # Update CS:S and verify latest version
 RUN steamcmd +login anonymous +force_install_dir ${HOME}/content/css +app_update 232330 validate +quit
+
+# Setup CS:S mount
+COPY ./mount.cfg ${HOME}/gmod/garrysmod/cfg/mount.cfg
 
 # Start server
 EXPOSE 27015
