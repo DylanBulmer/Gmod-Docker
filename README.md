@@ -1,3 +1,8 @@
+[![CodeFactor](https://www.codefactor.io/repository/github/dylanbulmer/gmod-docker/badge/master)](https://www.codefactor.io/repository/github/dylanbulmer/gmod-docker/overview/master)
+[![Docker Pulls](https://img.shields.io/docker/pulls/dylanbulmer/gmod.svg)](https://hub.docker.com/r/dylanbulmer/gmod)
+[![Image Size](https://img.shields.io/docker/image-size/dylanbulmer/gmod/latest.svg)](https://hub.docker.com/r/dylanbulmer/gmod)
+[![MIT License](https://img.shields.io/github/license/dylanbulmer/gmod-docker)](LICENSE)
+
 # dylanbulmer/gmod
 
 ## Description
@@ -39,7 +44,7 @@ services:
        - "traefik.docker.network=proxy"
        # UDP router
        - "traefik.udp.routers.prophunt.service=prophunt"
-       - "traefik.udp.routers.prophunt.entrypoints=steamudp"
+       - "traefik.udp.routers.prophunt.entrypoints=steamudp
        - "traefik.udp.services.prophunt.loadbalancer.server.port=27015"
       placement:
         constraints:
