@@ -3,7 +3,7 @@
 
 
 # Set the base image
-FROM busybox:latest
+FROM ubuntu:latest
 
 # Set environment variables
 ENV USER steam
