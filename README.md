@@ -29,8 +29,6 @@ services:
     configs:
       - source: server-config
         target: /home/steam/gmod/garrysmod/cfg/server.cfg
-      - source: mount-config
-        target: /home/steam/gmod/garrysmod/cfg/mount.cfg
     networks:
       - default
       - proxy
@@ -58,8 +56,6 @@ networks:
 configs:
   server-config:
     file: ./server.cfg
-  mount-config:
-    file: ./mount.cfg
 ```
 
 ## Environmental Variables

@@ -3,7 +3,7 @@
 
 
 # Set the base image
-FROM ubuntu:18.04
+FROM busybox:latest
 
 # Set environment variables
 ENV USER steam
